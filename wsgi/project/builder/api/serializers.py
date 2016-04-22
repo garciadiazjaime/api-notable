@@ -10,7 +10,10 @@ class SectionSerializer(serializers.ModelSerializer):
         fields = ('id', 'name', 'slug', 'order', 'block_set')
 
 class BlockSerializer(serializers.ModelSerializer):
+    titles = serializers.StringRelatedField(many=True)
+    paragraphs = serializers.StringRelatedField(many=True)
+
     class Meta:
         model = Block
         depth = 1
-        fields = ('id', 'name', 'order', 'slide_set', 'title_set', 'paragraph_set', 'image_set', 'button_set')
+        fields = ('id', 'name', 'order', 'slides', 'titles', 'paragraphs', 'images', 'buttons')
