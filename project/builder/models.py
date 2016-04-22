@@ -20,9 +20,9 @@ class Block(models.Model):
 
 class Slide(models.Model):
     image = models.CharField(max_length=500)
-    title = models.CharField(max_length=150)
-    button_title = models.CharField(max_length=150)
-    button_url = models.CharField(max_length=500)
+    title = models.CharField(max_length=150, null=True, blank=True)
+    button_title = models.CharField(max_length=150, null=True, blank=True)
+    button_url = models.CharField(max_length=500, null=True, blank=True)
     content = models.TextField(null=True, blank=True)
     block = models.ForeignKey(Block, related_name='slides')
 
