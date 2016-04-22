@@ -36,4 +36,3 @@ class SectionAdmin(nested_admin.NestedModelAdmin):
 
 
 admin.site.register(Section, SectionAdmin)
-# admin.site.register(Block, BlockAdmin)
