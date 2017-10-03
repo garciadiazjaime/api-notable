@@ -48,3 +48,8 @@ rhc env set DJANGO_SETTINGS_MODULE=settings.prod -a api
 
 Checking Envs
 rhc env list -a api
+
+docker build -t garciadiazjaime/api-notable .
+docker run -d -p 49178:3078 garciadiazjaime/api-notable
+docker push garciadiazjaime/api-notable
+docker pull garciadiazjaime/api-notable
